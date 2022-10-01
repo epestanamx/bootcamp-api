@@ -4,10 +4,11 @@ const sequelize = require('.')();
 const Usuario = sequelize.define(
   'Usuario',
   {
-    idUsuario: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      field: 'idusuario',
     },
     nombre: {
       type: DataTypes.STRING,
