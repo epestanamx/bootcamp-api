@@ -1,5 +1,4 @@
-const Cuenta = require('../models/cuenta');
-const CuentaDetalle = require('../models/cuenta-detalle');
+const { Cuenta, CuentaDetalle } = require('../models')();
 
 const getCuentas = async (req, res) => {
   const cuentas = await Cuenta.findAll();
@@ -14,6 +13,7 @@ const getCuentasDetalle = async (req, res) => {
     where: {
       idCuenta,
     },
+    include: ['cuenta', 'categoria', 'cliente', 'proveedor', 'usuario'],
   });
 
   return res.send(detalle);

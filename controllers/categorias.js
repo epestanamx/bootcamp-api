@@ -1,4 +1,4 @@
-const Categoria = require('../models/categoria');
+const { Categoria } = require('../models')();
 
 const obtenerCategoria = async (id) => {
   const categoria = await Categoria.findOne({
