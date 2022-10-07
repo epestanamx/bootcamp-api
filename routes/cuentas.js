@@ -7,6 +7,9 @@ const authMiddleware = require('../middlewares/auth');
 router.route('/')
   .get(authMiddleware, cuentasController.getCuentas);
 
+router.route('/resumen')
+  .get(authMiddleware, cuentasController.getCuentasResumen);
+
 router.route('/:idCuenta/detalle')
   .get(authMiddleware, cuentasController.getCuentasDetalle);
 
